@@ -140,32 +140,7 @@ check_jq() {
     fi
 }
 
-# Function to check and install Matter SDK
-check_matter_sdk() {
-    print_section "Checking Matter SDK installation..."
-    
-    if command_exists chip-tool; then
-        print_status "✅ Matter SDK tools are already installed"
-    else
-        print_warning "Matter SDK tools not found. Installing..."
-        
-        # Try to install via Homebrew
-        if brew list matter >/dev/null 2>&1; then
-            print_status "Matter package found in Homebrew, updating..."
-            brew upgrade matter
-        else
-            print_status "Installing Matter SDK via Homebrew..."
-            brew install matter
-        fi
-        
-        if command_exists chip-tool; then
-            print_status "✅ Matter SDK tools installed successfully"
-        else
-            print_warning "Matter SDK not available via Homebrew. Manual installation may be required."
-            print_status "Please refer to: https://github.com/project-chip/connectedhomeip"
-        fi
-    fi
-}
+
 
 # Function to check network connectivity
 check_network() {
@@ -312,9 +287,6 @@ main() {
     echo ""
     
     check_jq
-    echo ""
-    
-    check_matter_sdk
     echo ""
     
     check_network
