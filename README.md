@@ -13,8 +13,55 @@ A demonstration of the Matter bridge application that allows you to connect and 
 ## Prerequisites
 
 - macOS (tested on macOS 13+)
-- Matter SDK and tools installed
 - Network access for device discovery
+
+## Installation
+
+### Automatic Installation
+
+Run the installation script to automatically install all required dependencies:
+
+```bash
+./install-dependencies.sh
+```
+
+This script will:
+- Check macOS version and architecture
+- Install Homebrew (if not present)
+- Install Make and jq
+- Verify all required project files are present
+- Set proper file permissions for binaries
+- Check system resources
+
+### Manual Installation
+
+If you prefer to install dependencies manually:
+
+1. **Install Homebrew** (if not present):
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+
+2. **Install required tools**:
+   ```bash
+   brew install make jq
+   ```
+
+3. **Set file permissions**:
+   ```bash
+   chmod +x start-bridge.sh
+   chmod +x chip/macos-arm64-bridge-app/standalone/chip-bridge-app
+   chmod +x chip/macos-arm64-bridge-app/standalone/chip-tool
+   ```
+
+### What Gets Installed
+
+- **Homebrew**: Package manager for macOS
+- **Make**: Build automation tool
+- **jq**: Command-line JSON processor
+- **File permissions**: Executable permissions for bridge binaries
+
+**Note**: The Matter SDK binaries (`chip-bridge-app` and `chip-tool`) are already included in this project - no need to install the full Matter SDK.
 
 ## Quick Start
 
