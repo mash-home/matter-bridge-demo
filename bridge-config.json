@@ -1,0 +1,18 @@
+{
+  "bridge": {
+    "name": "mash Home - Matter Bridge Demo",
+    "vendor_id": "0xFFF1",
+    "product_id": "0x8001",
+    "software_version": 1,
+    "software_version_string": "1.0.0"
+  },
+  "network": {
+    "wifi_ssid": "",
+    "wifi_password": "",
+    "thread_enabled": true
+  },
+  "logging": {
+    "level": "info",
+    "console": true
+  }
+}
